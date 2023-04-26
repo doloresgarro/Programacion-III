@@ -1,0 +1,44 @@
+// me hace solo el subarbol derecho y se me pierde la suma del subarbol 7 + 3 +1 
+	public static int sumaMaximaVerticalRecursivo (ArbolBinario<Integer> a, int suma) {
+		if (a.esVacio())
+			return 0;
+		else { 
+			suma += a.getDato(); //le sumo el contenido del nodo actual
+			System.out.println(a.getDato());
+			System.out.println("La suma por el momento es: " + suma);
+			if (a.esHoja()) {
+				System.out.println("Es hoja");
+				System.out.println();	
+				return suma;
+			}
+			else {
+				if (a.tieneHijoDerecho() ) {
+					System.out.println("tiene hijo derecho");
+					System.out.println(a.getHijoDerecho());
+					sumaMaximaVerticalRecursivo(a.getHijoDerecho(), suma);
+				}
+				
+				if (a.tieneHijoIzquierdo()) {
+					System.out.println("tiene hijo izquierdo");		
+					System.out.println(a.getHijoIzquierdo());
+					sumaMaximaVerticalRecursivo(a.getHijoIzquierdo(), suma);
+				}
+			}
+			
+		}
+		return suma;
+	}
+	
+	public static int sumaMaximaVertical(ArbolBinario<Integer> a) {
+		int suma = 0;
+		int max = -1;
+		
+		suma =  sumaMaximaVerticalRecursivo(a, suma);
+		System.out.println("--------------------------"+ suma);
+		
+		
+		if (suma > max)
+			max = suma;
+		
+		return max;		
+	}
