@@ -248,21 +248,24 @@ public ListaGenerica<String> devolverCaminoExceptuando(String ciudad1, String ci
 				// si encontre la c1 entonces recorro hasta encontrar c2 
 				if (vInicial != null) { //si es <> null encontró la c1 en el grafo
 					ListaGenerica<String> caminoActual = new ListaGenericaEnlazada<String>();
-					caminoConMenorCargaDeCombustibleDFS(vInicial, marca, caminoActual, camino, ciudad2, tanqueAuto);
+					int cant = 0;
+					caminoConMenorCargaDeCombustibleDFS(vInicial, marca, caminoActual, camino, ciudad2, tanqueAuto, cant);
 				}
 			}
 				
 			return camino;
 		}		 
 		
-		private void caminoConMenorCargaDeCombustibleDFS(Vertice<String> vInicial, boolean[] marca, ListaGenerica<String> caminoActual, ListaGenerica<String> camino, String ciudad2, int tanqueAuto) {
-			
+	/*
+		private void caminoConMenorCargaDeCombustibleDFS(Vertice<String> vInicial, boolean[] marca, ListaGenerica<String> caminoActual, ListaGenerica<String> camino, String ciudad2, int tanqueAuto, int cant) {
+			int min = 999;
 			marca[vInicial.posicion()] = true; // marco como visitado ese vértice
 			caminoActual.agregarFinal(vInicial.dato()); // guardo el vértice actual
 			
-			if (vInicial.dato().equals(ciudad2) && (camino.esVacia() || caminoActual.tamanio() < camino.tamanio())) {  // si el vértice es la c2 entonces copio la lista en camino y devuelvo el camino
+			if (vInicial.dato().equals(ciudad2) && cant < min && (camino.esVacia() || caminoActual.tamanio() < camino.tamanio())) {  // si el vértice es la c2 entonces copio la lista en camino y devuelvo el camino
 				System.out.println("Encontre ciudad 2!!!!!!!!!!!!!!!");
 				this.clonarLista(caminoActual, camino);
+				
 			}
 			
 			int cant = 0;
@@ -287,7 +290,7 @@ public ListaGenerica<String> devolverCaminoExceptuando(String ciudad1, String ci
 		
 		
 	
-	
+	*/
 	
 	
 	
