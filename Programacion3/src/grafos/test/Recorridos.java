@@ -39,7 +39,7 @@ public class Recorridos <T>{
 		
 		for (int i = 0; i < marca.length; i++) {
 			if (!marca[i])
-				this.bfs(i, grafo, marca, lista);;
+				this.bfs(i, grafo, marca, lista);
 		}
 		return lista;
 	}

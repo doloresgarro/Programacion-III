@@ -1,6 +1,7 @@
 package grafos.test;
 
 import grafos.*;
+import grafos.utiles.Mapa;
 import prog3.listaenteros.ListaDeEnterosEnlazada;
 import prog3.listagenerica.*;
 
@@ -59,7 +60,7 @@ public class MapaTest {
 			 
 			 System.out.println("Devolver camino mas corto: " + m.caminoMasCorto("Buenos Aires", "La Habana"));
 			 System.out.println("Devolver camino sin cargar combustible: " + m.caminoSinCargarCombustible("Buenos Aires", "Asuncion", 6));
-			 System.out.println("Devolver camino con menor carga de combustible: " + m.caminoConMenorCargaDeCombustible("Buenos Aires", "La Habana", 2));
+			// System.out.println("Devolver camino con menor carga de combustible: " + m.caminoConMenorCargaDeCombustible("Buenos Aires", "La Habana", 2));
 			 
 	}
 }
